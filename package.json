@@ -52,6 +52,8 @@
     "babel-preset-airbnb": "^2.0.0",
     "babel-register": "^6.24.1",
     "chai": "^3.5.0",
+    "chai-enzyme": "^1.0.0-beta.0",
+    "cheerio": "^1.0.0-rc.2",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
     "eslint": "^2.13.1",
@@ -74,6 +76,7 @@
   "dependencies": {
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
+    "react-compat": "0.0.1",
     "react-dom": "^16.0.0"
   }
 }
