@@ -1,7 +1,10 @@
 import React from 'react';
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
+import chaiEnzyme from 'chai-enzyme';
 import { shallow } from 'enzyme';
 import FullHeader from '../../src/Main';
+
+chai.use(chaiEnzyme());
 
 describe('FullHeader', () => {
     it('should have header tag when mount', () => {
@@ -40,6 +43,18 @@ describe('FullHeader', () => {
         it('should have h2 tag when subtitle passed', () => {
             const wrapper = shallow(<FullHeader subtitle="TDD and React" />);
             expect(wrapper.find('h2').props().children).to.be.equal('TDD and React');
+        });
+    });
+
+    context('bgColor', () => {
+        it('should have background-color equal #CCCCCC when none is passed', () => {
+            const wrapper = shallow(<FullHeader title="JSS with TDD" />);
+            expect(wrapper).to.have.style('background-color').equal('#CCCCCC');
+        });
+
+        it('should have background-color egual #000000 when bgColor is passed', () => {
+            const wrapper = shallow(<FullHeader title="JSS with TDD" bgColor="#000000"/>);
+            expect(wrapper).to.have.style('background-color').equal('#000000');
         });
     });
 });
