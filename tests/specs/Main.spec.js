@@ -57,4 +57,28 @@ describe('FullHeader', () => {
             expect(wrapper).to.have.style('background-color').equal('#000000');
         });
     });
+
+    context('textColor', () => {
+        it('should have color equal #FFFFFF when none is passed', () => {
+            const wrapper = shallow(<FullHeader title="JSS with TDD" />);
+            expect(wrapper).to.have.style('color').equal('#FFFFFF');
+        });
+
+        it('should have color egual #000000 when textColor is passed', () => {
+            const wrapper = shallow(<FullHeader title="JSS with TDD" textColor="#000000"/>);
+            expect(wrapper).to.have.style('color').equal('#000000');
+        });
+    });
+
+    context('font', () => {
+        it('should have font equal sans-serif when none is passed', () => {
+            const wrapper = shallow(<FullHeader title="JSS with TDD" />);
+            expect(wrapper).to.have.style('font-family').equal('sans-serif');
+        });
+
+        it('should have font equal open-sans when font is passed', () => {
+            const wrapper = shallow(<FullHeader title="JSS with TDD" font="open-sans"/>);
+            expect(wrapper).to.have.style('font-family').equal('open-sans');
+        });
+    });
 });
